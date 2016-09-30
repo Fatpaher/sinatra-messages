@@ -6,6 +6,7 @@ gem 'sinatra-sequel'
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'database_cleaner'
 end
 
 group :test do
