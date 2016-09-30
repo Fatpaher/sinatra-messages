@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'sinatra'
-
-require'./config/enviroments'
+require 'sequel'
+require 'sinatra/sequel'
+require './config/init'
 
 get '/' do
   'Hello world'

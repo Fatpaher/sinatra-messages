@@ -1,10 +1,9 @@
-configure :prodoction do
-  set :database, 'sqlite://tmp/sinatra_development.sqlite'
+configure :development do
+  set :database, 'sqlite://tmp/sinatra_development.db'
 end
 
 configure :test do
-  set :database, 'sqlite://tmp/sinatra_test.sqlite'
-  set :environment, :test
+  set :database, 'sqlite://tmp/sinatra_test.db'
   set :run, false
   set :raise_errors, true
   set :logging, false
