@@ -12,21 +12,21 @@ post '/' do
     @message.save
     haml :link
   else
-    "Sorry there was an error!"
+    'Sorry there was an error!'
   end
 end
 
 get '/:link' do
-  @message=Message.find(link: [params[:link]])
+  @message = Message.find(link: [params[:link]])
 
-  if @message == nil
+  if @message.nil?
     status 404
     return 'Message not found'
   end
 
   case @message.option
   when 'hour'
-    if @message.created_at + 1.hour <= Time.now
+    if @message.created_at + 1.hour <= Time.current
       @message.delete
       status 404
       return 'Message not found'

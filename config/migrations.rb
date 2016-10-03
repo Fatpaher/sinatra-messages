@@ -1,4 +1,4 @@
-migration "create the message table" do
+migration 'create the message table' do
   database.create_table? :messages do
     primary_key :id
     String      :text, null: false

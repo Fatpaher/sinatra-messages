@@ -13,16 +13,16 @@ describe 'message will destroy', feature: true do
       message = create(:message, :delete_after_hour, created_at: 30.minutes.ago)
       visit "/#{message.link}"
 
-      expect(page).to  have_content(message.text)
+      expect(page).to have_content(message.text)
     end
   end
 
   context "if 'after first visit' selected" do
-    it 'will be not avaliable after first visit'do
+    it 'will be not avaliable after first visit' do
       message = create(:message, :delete_after_visit)
       visit "/#{message.link}"
 
-      expect(page).to  have_content(message.text)
+      expect(page).to have_content(message.text)
 
       visit "/#{message.link}"
 
