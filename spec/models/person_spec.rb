@@ -7,5 +7,10 @@ describe Message do
 
       expect(message).not_to be_valid
     end
+    it 'create secure link after saving' do
+      message = build(:message, link: nil)
+      message.save
+      expect(message.link).not_to eq(nil)
+    end
   end
 end
