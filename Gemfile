@@ -16,6 +16,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl'
   gem 'sinatra-contrib'
+  gem 'activesupport'
 end
 
 group :production do

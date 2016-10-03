@@ -1,6 +1,7 @@
 require 'haml'
 require 'sinatra/sequel'
 require "sinatra/reloader" if development?
+require 'active_support/core_ext/numeric/time'
 
 Sequel::Model.plugin :timestamps
 

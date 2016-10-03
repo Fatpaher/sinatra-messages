@@ -1,4 +1,10 @@
 Please leave a message
 %form{ action: '/', method: 'POST' }
   %input{ class: 'message_form', type: 'text', name: 'message[text]' }
+  %br
+  %input{ type: 'radio', value: 'visit', name: 'message[option]', checked: 'checked' }
+    Delete after first visit
+  %input{ type: 'radio', value: 'hour', name: 'message[option]'}
+    Delete after one hour
+  %br
   %input{ type: 'submit', value: 'Save' }

@@ -15,4 +15,3 @@ describe 'user visit a root page', feature: true do
     expect(page).to have_content('error')
   end
 end
-

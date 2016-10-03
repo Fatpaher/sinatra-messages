@@ -17,6 +17,11 @@ post '/' do
 end
 
 get '/:link' do
-  @message=Message[params[:link]]
-  haml :message
+  @message=Message.find(link: [params[:link]])
+  if (@message.option == 'hour') && (@message.created_at + 1.hour <= Time.now)
+    @message.delete
+    status 404
+  else
+    haml :message
+  end
 end
