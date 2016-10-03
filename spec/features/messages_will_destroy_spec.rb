@@ -18,5 +18,15 @@ describe 'message will destroy', feature: true do
   end
 
   context "if 'after first visit' selected" do
+    it 'will be not avaliable after first visit'do
+      message = create(:message, :delete_after_visit)
+      visit "/#{message.link}"
+
+      expect(page).to  have_content(message.text)
+
+      visit "/#{message.link}"
+
+      expect(page.status_code).to eq(404)
+    end
   end
 end

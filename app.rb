@@ -18,10 +18,21 @@ end
 
 get '/:link' do
   @message=Message.find(link: [params[:link]])
-  if (@message.option == 'hour') && (@message.created_at + 1.hour <= Time.now)
-    @message.delete
+
+  if @message == nil
     status 404
-  else
-    haml :message
+    return 'Message not found'
   end
+
+  case @message.option
+  when 'hour'
+    if @message.created_at + 1.hour <= Time.now
+      @message.delete
+      status 404
+      return 'Message not found'
+    end
+  when 'visit'
+    @message.delete
+  end
+  haml :message
 end
