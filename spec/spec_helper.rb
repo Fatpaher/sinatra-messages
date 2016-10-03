@@ -4,6 +4,7 @@ require 'factory_girl'
 require 'support/factory_girl'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'pry'
 
 # require "./config/environment"
 require File.expand_path '../../app', __FILE__
@@ -11,8 +12,6 @@ require File.expand_path '../../app', __FILE__
 ENV['RACK_ENV'] = 'test'
 DB = database
 Capybara.app = Sinatra::Application
-
-
 
 module RSpecMixin
   include Rack::Test::Methods
@@ -37,6 +36,3 @@ RSpec.configure do |c|
     DatabaseCleaner[:sequel, {connection: ::DB}].clean
   end
 end
-
-
-
