@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'rack/test'
 require 'rspec'
 require 'factory_girl'
@@ -10,8 +12,6 @@ require 'pry'
 # require "./config/environment"
 require File.expand_path '../../app', __FILE__
 
-ENV['RACK_ENV'] = 'test'
-DB = database
 Capybara.app = Sinatra::Application
 
 module RSpecMixin

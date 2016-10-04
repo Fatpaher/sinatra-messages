@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'sinatra'
 gem 'sequel'
-gem 'sinatra-sequel'
 gem 'haml'
+gem 'attr_encrypted'
 
 group :development, :test do
   gem 'sqlite3'

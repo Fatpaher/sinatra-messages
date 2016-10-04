@@ -1,13 +1,13 @@
 require 'haml'
-require 'sinatra/sequel'
+require 'sequel'
 require 'sinatra/reloader' if development?
 require 'active_support/core_ext/numeric/time'
+require 'attr_encrypted'
 
 Sequel::Model.plugin :timestamps
 
 require'./config/enviroments'
 require './models/message'
-require './config/migrations'
 
 module Sequel
   class Model

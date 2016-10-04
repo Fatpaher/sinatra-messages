@@ -13,4 +13,11 @@ describe Message do
       expect(message.link).not_to eq(nil)
     end
   end
+  describe 'encryption of text field' do
+    it 'save text field as encrypted' do
+      text = 'Secret text'
+      message = create(:message, text: text)
+      expect(message.encrypted_text).not_to eq(text)
+    end
+  end
 end
