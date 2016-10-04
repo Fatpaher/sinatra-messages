@@ -3,6 +3,7 @@ gem 'sinatra'
 gem 'sequel'
 gem 'haml'
 gem 'attr_encrypted'
+gem 'activesupport'
 
 group :development, :test do
   gem 'sqlite3'
@@ -16,7 +17,8 @@ group :test do
   gem 'capybara'
   gem 'factory_girl'
   gem 'sinatra-contrib'
-  gem 'activesupport'
+  gem 'capybara-webkit'
+  gem 'timecop'
 end
 
 group :production do

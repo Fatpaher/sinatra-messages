@@ -1,10 +1,49 @@
 Please leave a message
-%form{ action: '/', method: 'POST' }
-  %input{ class: 'message_form', type: 'text', name: 'message[text]' }
+%form{ class: 'form', action: '/', method: 'POST' }
+  %label{ for: 'text_id' }
+    Message
+  %input{ class: 'message_form',
+    id: 'text_id',
+    type: 'text',
+    name: 'message[text]' }
   %br
-  %input{ type: 'radio', value: 'visit', name: 'message[option]', checked: 'checked' }
-    Delete after first visit
-  %input{ type: 'radio', value: 'hour', name: 'message[option]'}
-    Delete after one hour
+  .visit
+    %input{ type: 'radio',
+      id: 'radio_visit_id',
+      value: 'visit',
+      name: 'message[option]',
+      checked: 'checked' }
+    %label{ for: 'radio_visit_id' }
+      Delete after visit
+
+    #visit_id
+      %label{ for: 'visit_field_id' }
+        Number of visits
+      %input{ type: 'number',
+        id: 'visit_field_id',
+        value: 1,
+        name: 'message[option_value]' }
+
+  .hour
+    %input{ type: 'radio',
+      id: 'radio_hour_id',
+      value: 'hour',
+      name: 'message[option]'}
+    %label{ for: 'radio_hour_id' }
+      Delete after hour
+
+    #hour_id.hidden
+      %label{ for: 'hour_field_id' }
+        Number of hours
+      %input{ type: 'number',
+        id: 'hour_field_id',
+        value: 1,
+        name: 'message[option_value]',
+        disabled: 'disabled' }
+
   %br
   %input{ type: 'submit', value: 'Save' }
+
+%link{:href => "css/form.css", :rel => "stylesheet", :type => "text/css"}/
+%script{ :src => "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" }
+%script{ :src => "javascripts/form.js", :type => "text/javascript" }

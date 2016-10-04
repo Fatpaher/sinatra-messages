@@ -4,7 +4,7 @@ describe 'user visit a root page', feature: true do
   it 'can write a message and can have link to read it' do
     message = 'Very secret message'
     visit '/'
-    find('.message_form').set(message)
+    fill_in('Message', with: message)
     click_on 'Save'
     find('.message_link').click
     expect(page).to have_content(message)
