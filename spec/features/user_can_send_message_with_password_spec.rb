@@ -14,6 +14,7 @@ describe 'user can create message with password', feature: true, js: true do
     fill_in('Password', with: password)
     expect(page).to have_content(text)
   end
+
   it 'enter wrong password' do
     text = 'Some message'
     password = 'very_secret_password'

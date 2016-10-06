@@ -7,39 +7,58 @@ Please leave a message
     type: 'text',
     name: 'message[text]' }
   %br
-  .visit
-    %input{ type: 'radio',
-      id: 'radio_visit_id',
-      value: 'visit',
-      name: 'message[option]',
-      checked: 'checked' }
-    %label{ for: 'radio_visit_id' }
-      Delete after visit
 
-    #visit_id
-      %label{ for: 'visit_field_id' }
-        Number of visits
-      %input{ type: 'number',
-        id: 'visit_field_id',
-        value: 1,
-        name: 'message[option_value]' }
+  %input{ type: 'checkbox',
+    id: 'password_checkbox_id',
+    name: 'message[password]',
+    value: 'true' }
+  %label{ for: 'password_checkbox_id' }
+    With password
 
-  .hour
-    %input{ type: 'radio',
-      id: 'radio_hour_id',
-      value: 'hour',
-      name: 'message[option]'}
-    %label{ for: 'radio_hour_id' }
-      Delete after hour
+  %br
+  #password_id.hidden
+    %label{ for: 'password_field_id' }
+      Password
+      %input{ class: 'message_form',
+        id: 'password_field_id',
+        disabled: 'disabled',
+        type: 'password'}
 
-    #hour_id.hidden
-      %label{ for: 'hour_field_id' }
-        Number of hours
-      %input{ type: 'number',
-        id: 'hour_field_id',
-        value: 1,
-        name: 'message[option_value]',
-        disabled: 'disabled' }
+  .radio_buttons
+    %br
+    .visit
+      %input{ type: 'radio',
+        id: 'radio_visit_id',
+        value: 'visit',
+        name: 'message[option]',
+        checked: 'checked' }
+      %label{ for: 'radio_visit_id' }
+        Delete after visit
+
+      #visit_id
+        %label{ for: 'visit_field_id' }
+          Number of visits
+        %input{ type: 'number',
+          id: 'visit_field_id',
+          value: 1,
+          name: 'message[option_value]' }
+
+    .hour
+      %input{ type: 'radio',
+        id: 'radio_hour_id',
+        value: 'hour',
+        name: 'message[option]'}
+      %label{ for: 'radio_hour_id' }
+        Delete after hour
+
+      #hour_id.hidden
+        %label{ for: 'hour_field_id' }
+          Number of hours
+        %input{ type: 'number',
+          id: 'hour_field_id',
+          value: 1,
+          name: 'message[option_value]',
+          disabled: 'disabled' }
 
   %br
   %input{ type: 'submit', value: 'Save' }
