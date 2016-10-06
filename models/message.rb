@@ -9,7 +9,7 @@ class Message < Sequel::Model
 
   def validate
     super
-    if option_value && option_value < 0
+    if option_value && option_value.negative?
       errors.add(:name, "can't be negative or zero")
     end
   end

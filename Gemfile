@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
+
 gem 'sinatra'
 gem 'sequel'
 gem 'haml'
 gem 'attr_encrypted'
 gem 'activesupport'
+gem 'rake'
 
 group :development, :test do
   gem 'sqlite3'

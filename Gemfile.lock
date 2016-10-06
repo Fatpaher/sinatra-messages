@@ -52,6 +52,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (11.2.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -101,6 +102,7 @@ DEPENDENCIES
   pg
   pry
   rack-test
+  rake
   rspec
   sequel
   sinatra
@@ -108,5 +110,8 @@ DEPENDENCIES
   sqlite3
   timecop
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.13.0
+   1.13.2

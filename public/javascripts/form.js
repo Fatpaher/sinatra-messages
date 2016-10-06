@@ -31,14 +31,12 @@ $(document).ready(function() {
   });
 
   $(".form input[type='submit']").click(function() {
-    console.log('ouch');
     var passwordChecked = $('#password_checkbox_id').is(':checked')
     if (passwordChecked == true) {
       var text = $('#text_id').val();
       var secret = $('#password_field_id').val();
       var iv = CryptoJS.lib.WordArray.random(16);
       var encrypted = '' + CryptoJS.AES.encrypt(text, secret);
-      console.log(encrypted);
       $('#encrypted_text_id').val(encrypted);
       $('#encrypted_text_id').prop('disabled', false);
       $('#iv_id').val(iv);
