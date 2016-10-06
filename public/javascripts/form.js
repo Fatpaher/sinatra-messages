@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('input').change(function() {
+  $("input[type='radio']").change(function() {
     var selectedVal = $("input[type='radio']:checked").val();
     switch (selectedVal) {
       case 'hour':
@@ -17,4 +17,17 @@ $(document).ready(function() {
         break
     }
   });
+
+  $("input[type='checkbox']").change(function() {
+    var passwordChecked = $("#password_checkbox_id").is(':checked');
+    if (passwordChecked == true) {
+      $('#password_id').show()
+      $('#password_field_id').prop('disabled',false);
+    }
+    else {
+      $('#password_id').hide()
+      $('#password_field_id').prop('disabled',true);
+    }
+  })
 });
+
