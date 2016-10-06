@@ -9,9 +9,4 @@ describe 'user visit a root page', feature: true do
     find('.message_link').click
     expect(page).to have_content(message)
   end
-  it 'redirects to message page and see error' do
-    visit '/'
-    click_on 'Save'
-    expect(page).to have_content('error')
-  end
 end

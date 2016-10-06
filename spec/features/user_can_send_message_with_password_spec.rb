@@ -12,6 +12,7 @@ describe 'user can create message with password', feature: true, js: true do
     click_on 'Save'
     find('.message_link').click
     fill_in('Password', with: password)
+    click_on 'Submit'
     expect(page).to have_content(text)
   end
 
@@ -28,6 +29,5 @@ describe 'user can create message with password', feature: true, js: true do
     find('.message_link').click
     fill_in('Password', with: wrong_password)
     expect(page).not_to have_content(text)
-    expect(page).to have_content('Wrong password')
   end
 end
